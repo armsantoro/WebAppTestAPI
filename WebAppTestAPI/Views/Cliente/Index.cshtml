@@ -1,0 +1,91 @@
+﻿@model List<ClienteModel> 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 20px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="container">
+    <h1>Elenco Clienti</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Età</th>
+                <th>Partita IVA</th>
+                <th>Codice capelli</th>
+                <th>Data</th>
+                <th>Stato cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Cognome</td>
+                    <td>@cliente.Eta</td>
+                    <td>@cliente.PIva</td>
+                    <td>@cliente.CodCapelli</td>
+                    <td>@cliente.Data</td>
+                    <td>@cliente.StatoCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button class="btn">Aggiungi Cliente</button>
+</div>
